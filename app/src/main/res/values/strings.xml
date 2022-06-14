@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Lab2_Devanshi_C0852304_Android</string>
+    <string name="view_more">View More</string>
+    <string name="search_product">Search product</string>
+    <string name="add_product">Add Product</string>
+    <string name="add_a_new_product">Add a new product</string>
+    <string name="enter_product_name">Enter Product Name</string>
+    <string name="enter_product_description">Enter Product Description</string>
+    <string name="enter_product_price">Enter Product Price</string>
 </resources>
