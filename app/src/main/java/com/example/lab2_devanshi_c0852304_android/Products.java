@@ -2,6 +2,7 @@ package com.example.lab2_devanshi_c0852304_android;
 
 public class Products {
 
+
     int product_id;
     String product_name, product_description;
     double product_price;
