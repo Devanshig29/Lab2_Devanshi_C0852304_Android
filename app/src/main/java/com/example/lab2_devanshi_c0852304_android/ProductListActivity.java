@@ -25,7 +25,7 @@ public class ProductListActivity extends AppCompatActivity  {
     EditText search_product;
     RecyclerView product_list;
     RecyclerView.LayoutManager layoutManager;
-    Button add_prod;
+    Button add_prod, btn_search;
     ArrayList<Products> prodlist;
     ProductRecyclerViewAdapter adapter;
     DatabaseAdapter databaseAdapter;
@@ -68,6 +68,30 @@ public class ProductListActivity extends AppCompatActivity  {
     private void findId() {
         search_product=findViewById(R.id.et_search);
         product_list=findViewById(R.id.lv_products);
+        btn_search=findViewById(R.id.btn_search);
+        btn_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String searchString = search_product.getText().toString();
+                prodlist = new ArrayList<>();
+                Cursor cursor = databaseAdapter.findProductByName(searchString);
+                if (cursor != null && cursor.moveToFirst()){
+                    do {
+                        // Passing values
+                        String column1 = cursor.getString(0);
+                        String column2 = cursor.getString(1);
+                        String column3 = cursor.getString(2);
+                        String column4 = cursor.getString(3);
+                        // Do something Here with values
+//                Log.d("DB_DEBUG_SEARCH", "col1: " + column1 + ", col2:" +
+//                        column2 + ", col3:" + column3 + ", col4:" + column4);
+                        Products data = new Products(Integer.parseInt(column1), column2,column3,Double.parseDouble(column4));
+                        prodlist.add(data);
+                    } while(cursor.moveToNext());
+                }
+                adapter.filterList(prodlist);
+            }
+        });
 
     }
 
