@@ -15,15 +15,11 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
     Button btnAddToDb;
     EditText etProductName, etProductDescription, etProductPrice;
     DatabaseAdapter databaseAdapter = new DatabaseAdapter(this);
-    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_product);
         findId();
-        toolbar.setTitle("Add Product");
-        setSupportActionBar(toolbar);
-
     }
     private void findId(){
 

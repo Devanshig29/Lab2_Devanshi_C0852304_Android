@@ -14,7 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     TextView prod_name,prod_desc,prod_price;
-    Button view_more;
+    Button view_more,add_product;
     DatabaseAdapter databaseAdapter;
     Context context;
     @Override
@@ -41,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,ProductListActivity.class));
             }
+        });add_product.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,ProductDetailActivity.class));
+            }
         });
     }
 
@@ -57,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void findID() {
 
+        add_product=findViewById(R.id.add_product);
         prod_name=findViewById(R.id.tv_name);
         prod_desc=findViewById(R.id.tv_description);
         prod_price=findViewById(R.id.tv_price);

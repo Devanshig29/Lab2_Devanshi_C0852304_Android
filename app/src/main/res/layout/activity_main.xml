@@ -40,6 +40,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/view_more" />
+        <Button
+            android:id="@+id/add_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_product" />
 
     </LinearLayout>
 </LinearLayout>

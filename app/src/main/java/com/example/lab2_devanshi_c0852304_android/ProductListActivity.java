@@ -20,7 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class ProductListActivity extends AppCompatActivity implements View.OnClickListener {
+public class ProductListActivity extends AppCompatActivity  {
 
     EditText search_product;
     RecyclerView product_list;
@@ -68,12 +68,8 @@ public class ProductListActivity extends AppCompatActivity implements View.OnCli
     private void findId() {
         search_product=findViewById(R.id.et_search);
         product_list=findViewById(R.id.lv_products);
-        add_prod=findViewById(R.id.add_product);
-        add_prod.setOnClickListener(this);
+
     }
 
-    @Override
-    public void onClick(View view) {
-        startActivity(new Intent(ProductListActivity.this, ProductDetailActivity.class));
-    }
+
 }

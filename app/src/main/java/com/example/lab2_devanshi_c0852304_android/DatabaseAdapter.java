@@ -12,10 +12,10 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "product_database";
     private static final String TABLE_NAME = "product";
-    private static final String COLUMN_ID = "product_id";
-    private static final String COLUMN_NAME = "product_name";
-    private static final String COLUMN_DESC = "product_description";
-    private static final String COLUMN_PRICE = "product_price";
+    private static final String COLUMN_ID = "prodid";
+    private static final String COLUMN_NAME = "prodname";
+    private static final String COLUMN_DESC = "proddesc";
+    private static final String COLUMN_PRICE = "prodprice";
 
 
     public DatabaseAdapter(Context context) {
